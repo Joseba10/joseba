@@ -1,43 +1,176 @@
 package misejercicios;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+//import java.io.Console;
+import java.util.Scanner;
+import java.util.Vector;
+
 public class Ejemplo001 {
 
-	public static void main(String[] args) {
-
-		// tipoDeDatos();
-		estructurasDeControl();
+	public static void main(String[] args) throws IOException {
+		// tiposDeDatos();
+		// estructurasDeControl();
+		// entradaConsola();
+		// entradaClasica(); // Este es un comentario largo para poder probar si esto
+		// sigue hace un salto de línea
+		// ejemploDiagrama();
+		// ejemploLeerNumero();
+		// System.out.println(factorial(5));
+		// colecciones();
+		coleccionesJava5();
 	}
 
+	private static void coleccionesJava5() {
+
+		ArrayList<String> al = new ArrayList<String>();
+
+		al.add("Uno");
+		al.add("Dos");
+		al.add("Tres");
+
+		for (String dato : al)
+			System.out.println(dato);
+
+		String s = al.get(1);
+	}
+
+	private static void colecciones() {
+
+		Vector v = new Vector();
+
+		v.add("Hola");
+		v.add(6);
+		v.add(2.23);
+		v.add("Es lo que hay");
+
+		v.remove(1);
+		v.add(3423);
+		v.insertElementAt(9, 1);
+
+		for (int i = 0; i < v.size(); i++)
+			System.out.println(v.get(i));
+
+		Object[] o = v.toArray();
+		System.out.println(o[1]);
+
+	}
+
+	@SuppressWarnings("unused")
+	private static int factorial(int numero) {
+		if (numero == 1) {
+			return 1;
+		}
+
+		return numero * factorial(numero - 1);
+	}
+
+	@SuppressWarnings("unused")
+	private static void ejemploLeerNumero() throws IOException {
+		int a = leerNumero("A: ");
+		int b = leerNumero("B: ");
+		System.out.println("La suma de A y B es: " + (a + b));
+	}
+
+	private static int leerNumero(String mensaje) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String linea = "0";
+
+		do {
+			if (!linea.matches("\\d+"))
+				System.out.println("DEBES PONER UN NUMERO");
+
+			System.out.print(mensaje);
+			linea = br.readLine();
+		} while (!linea.matches("\\d*"));
+
+		int numero = Integer.parseInt(linea);
+
+		return numero;
+	}
+
+	@SuppressWarnings("unused")
+	private static void ejemploDiagrama() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String linea = "0";
+
+		do {
+			if (!linea.matches("\\d*"))
+				System.out.println("DEBES PONER UN NUMERO, PEAZO INUTIL");
+
+			System.out.print("Dime el número: ");
+
+			linea = br.readLine();
+
+		} while (!linea.matches("\\d*"));
+
+		int num = Integer.parseInt(linea);
+
+		System.out.println(num * 2);
+	}
+
+	@SuppressWarnings("unused")
+	private static void entradaClasica() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String linea = br.readLine();
+
+		if (linea.matches("\\d*"))
+			System.out.println("NUMERO x 2: " + (Integer.parseInt(linea) * 2));
+		else
+			System.out.println("NO ES UN NUMERO");
+	}
+
+	@SuppressWarnings("unused")
+	private static void entradaConsola() {
+		// Console c = System.console();
+		// System.out.println(c.readLine());
+
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Introduce un número: ");
+
+		String dato = s.next();
+
+		if (dato.matches("\\d*"))
+			System.out.println("NUMERO x 2: " + (Integer.parseInt(dato) * 2));
+		else
+			System.out.println("TEXTO: " + dato);
+
+		System.out.print("Introduce un nombre: ");
+		System.out.println(s.next());
+
+		s.close();
+	}
+
+	@SuppressWarnings("unused")
 	private static void estructurasDeControl() {
-		System.out.println("Estructuras de Control");
+		System.out.println("Estructuras de control");
 
 		boolean condicion = false;
 		boolean condicion2 = true;
 
-		if (condicion) {
-
+		if (condicion)
 			System.out.println("Condicion1");
-		} else if (condicion2) {
-
+		else if (condicion2)
 			System.out.println("Condicion2");
-		} else {
+		else
+			System.out.println("ELSE");
 
-			System.out.println("Else");
-		}
-
-		int opcion = 3;
+		int opcion = 2;
 
 		switch (opcion) {
 		case 1:
-			System.out.println("Uno");
+			System.out.println("UNO");
 			break;
 		case 2:
-			System.out.println("Dos");
+			System.out.println("DOS");
 			break;
-
 		default:
-			System.out.println("Otros");
-
+			System.out.println("OTRO");
 		}
 
 		int mes = 6;
@@ -45,155 +178,150 @@ public class Ejemplo001 {
 
 		switch (mes) {
 		case 2:
-
 			dias = 28;
-
 			break;
-
 		case 4:
 		case 6:
 		case 9:
 		case 11:
-
 			dias = 30;
 			break;
-
 		default:
 			dias = 31;
-
 		}
+
 		System.out.println(dias);
 
 		int c = 1;
 
-		/*
-		 * while(c <=10){
-		 * 
-		 * System.out.println(c++); //Incluye el uno System.out.println(++c); //No Incluye
-		 * el uno }
-		 */
-
-		do {
-
-			System.out.println(c++);
-		} while (c <= 10);
-
-		for (int n = 1; n <= 10; n++) {
-			System.out.println("Entrada del for" + n);
-
+		while (c <= 10) {
+			System.out.println("Dentro" + c++);
 		}
 
-		for (int up = 1, down = 10; up < down; up += 2, down /= 2)
-			System.out.format("%d,%d\n", up, down);
+		do {
+			System.out.println(c--);
+		} while (c >= 1);
 
-		System.out.println("C:\\nuevos\\trabajos"); // Tienes que poner dos
-													// barras porque si nos se
-													// activa
-													// los comando asociados que
-													// son: \n y \t
-
-		int[] array = { 1, 2, 3, 4, 5 }; // Se usa cuando sabes cuanto va a
-											// haber
-											// Poner [] es para indicar que es
-											// un array
-		// int [] lluvias =new int[12]
-		for (int i = 0; i < array.length; i++)
-
-			System.out.println(array[i]);
-
-		for (int dato : array)
-			System.out.println(dato); // Es lo mismo que lo de arriba
-
-		char[][] tablero;
-		tablero = new char[8][8]; /*
-								 * Creas dos estructuras, una parte de la estructura
-								 * pertece a la otra estructura,64 huecos
-								 */
-		// Asigna los puntos
-		for (int o = 0; o < tablero.length; o++)
-
-			for (int p = 0; p < tablero[o].length; p++)
-
-				tablero[o][p] = '.';
 		/*
-		 * Pones la letra p en la posicion 1 y la posicion 8
+		 * int n = 1; while(n <= 10){ System.out.println(n); n++; }
 		 */
 
+		for (int n = 1; n <= 10; n++)
+			System.out.println("FOR: " + n);
+
+		int t, z;
+		for (t = 1, z = 3; t * z <= 10 || z * 2 == 20; t--, z = t * 3)
+			System.out.println("FOR " + t + ", " + z);
+
+		System.out.println("DESPUES FOR " + t + ", " + z);
+
+		for (int up = 1, down = 10; up < down; up += 2, down /= 2)
+			System.out.format("%d, %d\n", up, down);
+
+		System.out.println("C:\nuevos\trabajos");
+
+		System.out.println("C:\\nuevos\\trabajos");
+
+		int[] arr = { 1, 2, 3, 4, 5 };
+		// int[] lluvias = new int[12];
+
+		for (int i = 0, dato; i < arr.length; i++) {
+			dato = arr[i];
+			System.out.println(dato);
+		}
+
+		for (int dato : arr)
+			System.out.println(dato);
+
+		char[][] tablero;
+
+		tablero = new char[8][8];
+
+		for (int x = 0; x < tablero.length; x++)
+			for (int y = 0; y < tablero[x].length; y++)
+				tablero[x][y] = '.';
+
+		// tablero.length se le quita 3 porque uno sería el necesario
+		// para saltar de la posición primera a la última, pero
+		// tenemos que compensar una fila por el salto inicial a la
+		// segunda y otra fila, porque lo ponemos en la anteúltima
+		// for(int x = 1; x < tablero.length ; x += tablero.length-3)
+		// for(int y = 0; y < tablero[x].length; y++)
+		// tablero[x][y] = 'p';
+
 		int primeraFila = 0;
-		int ultimaFila = tablero.length - 1; // Coge el ultimo valor del tablero
+		int ultimaFila = tablero.length - 1;
 		int segundaFila = primeraFila + 1;
 		int anteultimaFila = ultimaFila - 1;
 
-		for (int o = 1; o < tablero.length; o++)
-			if (o == segundaFila || o == anteultimaFila) {
-				for (int p = 0; p < tablero[o].length; p++)
-
-					tablero[o][p] = 'p';
-			}
+		for (int x = 0; x < tablero.length; x++)
+			if (x == segundaFila || x == anteultimaFila)
+				for (int y = 0; y < tablero[x].length; y++)
+					tablero[x][y] = 'p';
 
 		char[] figuras = { 't', 'c', 'a', 'd', 'r', 'a', 'c', 't' };
 
-		tablero[primeraFila] = figuras.clone(); // Coge y hace una copia por lo
-												// que
-		tablero[ultimaFila] = figuras.clone(); // cada variable aunque se
-												// modifique
-												// Sera modificada sin afectar a
-												// la otra
+		tablero[primeraFila] = figuras.clone();
+		tablero[ultimaFila] = figuras.clone();
 
 		tablero[ultimaFila][1] = '.';
 
-		/*
-		 * Va poniendo los puntos en horizontal,gracias a print,si pones println hace un
-		 * salto de linea y por tanto saldrian verticalmente
-		 */
-		for (int o = 0; o < tablero.length; o++) {
-			for (int p = 0; p < tablero[o].length; p++)
-				System.out.print(tablero[o][p]);
+		tablero[5][2] = 'c';
+
+		for (int x = 0; x < tablero.length; x++) {
+			for (int y = 0; y < tablero[x].length; y++)
+				System.out.print(tablero[x][y]);
 			System.out.println();
 		}
-
 	}
 
 	@SuppressWarnings("unused")
-	private static void tipoDeDatos() {
-		// TODO Ejemplo de tipos de datos
+	private static void tiposDeDatos() {
 		int i;
 		int a, b;
 		int z = 0;
 		int g = 1, c = 2;
-		i = 3;
-		a = b = c;
-
-		float f = 5.3f;
-		double d = 5.3;
-
-		boolean bool = true;
-		char car = 'a'; // Solo un Caracter
-		System.out.println(i + z + g + a + b + "");
-		System.out.println("" + i + z + g + a + b); // Convierte a texto
-		System.out.println("Prueba");
-
-		int resto = 5 % 2;
-		System.out.println("El resto de 5/2 es " + resto);
 
 		int x = 3;
 
 		System.out.println(1 <= x && x <= 10);
 
 		x = -50;
-		System.out.println(1 >= x || x >= 10);
-		System.out.println(!(1 >= x || x >= 10));
 
-		boolean estaDentrodelRango = (!(1 >= x || x >= 10));
-		System.out.println(estaDentrodelRango ? "Si" : "No"); /*
-															 * Si sale true sale Si, si no
-															 * deja de leer y pone No
-															 */
-		int num1 = 3, num2 = 2;
+		boolean estaDentroDelRango = !(x <= 1 || x >= 10);
+
+		System.out.println(estaDentroDelRango ? "SI" : "NO");
+
+		int num1 = 3, num2 = 5;
 
 		int max = num1 > num2 ? num1 : num2;
-		System.out.println("El maximo de " + num1 + " y " + num2 + " es " + max);
-		System.out.println(String.format("El maximo de  %d y %d es %d", num1, num2, max));
+
+		System.out.println("El máximo de " + num1 + " y " + num2 + " es " + max);
+
+		System.out.println(String.format("El máximo de %d y %d es %d", num1, num2, max));
+
+		i = 3;
+
+		a = b = c;
+
+		float f = 5.3f;
+
+		double d = 5.3;
+
+		boolean bool = true;
+
+		char car = '$';
+
+		System.out.println(i + z + g + a + b + "");
+		System.out.println("" + i + z + g + a + b);
+
+		System.out.println("Prueba");
+
+		int resto = 5 % 2;
+
+		System.out.println("El resto de 5 / 2 es " + resto);
+
+		System.out.println(5 & 3);
 
 	}
 
