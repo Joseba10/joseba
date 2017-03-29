@@ -1,8 +1,8 @@
-package com.ipartek.formacion.josebaclemente.poo.tipospruebas;
+package com.ipartek.formacion.joseba.poo.tipospruebas;
 
 import java.util.Date;
 
-import com.ipartek.formacion.josebaclemente.poo.tipos.Persona;
+import com.ipartek.formacion.joseba.poo.tipos.Persona;
 
 public class PersonaPruebas {
 

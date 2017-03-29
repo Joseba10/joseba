@@ -1,4 +1,4 @@
-package com.ipartek.formacion.josebaclemente.poo.tipos;
+package com.ipartek.formacion.joseba.poo.tipos;
 
 import java.util.Date;
 

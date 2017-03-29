@@ -1,6 +1,6 @@
-package com.ipartek.formacion.josebaclemente.poo.tipospruebas;
+package com.ipartek.formacion.joseba.poo.tipospruebas;
 
-import com.ipartek.formacion.josebaclemente.poo.tipos.Punto;
+import com.ipartek.formacion.joseba.poo.tipos.Punto;
 
 public class PuntoPrueba {
 
