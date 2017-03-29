@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Date;
 //import java.io.Console;
 import java.util.Scanner;
 import java.util.Vector;
@@ -20,7 +21,14 @@ public class Ejemplo001 {
 		// ejemploLeerNumero();
 		// System.out.println(factorial(5));
 		// colecciones();
-		coleccionesJava5();
+		// coleccionesJava5();
+		fechas();
+	}
+
+	private static void fechas() {
+		Date d = new Date();
+		System.out.println(d);
+
 	}
 
 	private static void coleccionesJava5() {
