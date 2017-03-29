@@ -16,7 +16,7 @@ public class Persona {
 	}
 
 	public Persona() {
-
+		this(0, "Anonimo");
 	}
 
 	public void setNombre(String Nombre) {
@@ -45,7 +45,8 @@ public class Persona {
 
 	public String aTexto() {
 
-		return ("Id " + id + ", Nombre " + Nombre + ", " + date + "");
+		return ("Id " + id + ", Nombre " + Nombre + ", " + " Fecha de Nacimiento " + date);
+		// Puedes ponerlo asi: %3$te-%3$tm-%3$tY para sacar las fechas
 	}
 
 }
