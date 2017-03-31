@@ -1,6 +1,10 @@
 package com.ipartek.formacion.joseba.poo.tipos;
 
+import java.util.Arrays;
+
 public class Cochenuevo {
+
+	public static final int DELANTERA_DERECHA = 0, DELANTERA_IZQUIERDA = 1, TRASERA_DERECHA = 2, TRASERA_IZQUIERDA = 3; // Constante
 
 	private String marca;
 	private int potencia, antiguedad, precio;
@@ -10,6 +14,14 @@ public class Cochenuevo {
 
 	public String getMarca() {
 		return marca;
+	}
+
+	public Rueda[] getRuedas() {
+		return ruedas;
+	}
+
+	public void setRuedas(Rueda[] ruedas) {
+		this.ruedas = ruedas;
 	}
 
 	public void setMarca(String marca) {
@@ -60,6 +72,20 @@ public class Cochenuevo {
 	public Cochenuevo() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public String toString() {
+		return "Coche [marca= " + marca + ", potencia=" + potencia + ", nuevo=" + nuevo + " precio= " + precio + "\nruedas=" + Arrays.toString(ruedas) + "]";
+	}
+
+	public void setRueda(Rueda rueda, int delanteraDerecha) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public int[] getRueda(int traseraDerecha) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

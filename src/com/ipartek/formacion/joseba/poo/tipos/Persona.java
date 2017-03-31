@@ -45,7 +45,7 @@ public class Persona {
 
 	public String aTexto() {
 
-		return ("Id " + id + ", Nombre " + Nombre + ", " + " Fecha de Nacimiento " + date);
+		return ("Id " + id + ", Nombre " + Nombre + ", " + "Fecha de Nacimiento" + date);
 		// Puedes ponerlo asi: %3$te-%3$tm-%3$tY para sacar las fechas
 	}
 
