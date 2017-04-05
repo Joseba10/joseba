@@ -1,5 +1,6 @@
 package com.ipartek.formacion.joseba.poo.tipos;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Carrito {
@@ -69,5 +70,15 @@ public class Carrito {
 		}
 
 		return sb.toString(); // return s;
+	}
+
+	public BigDecimal getPrecioTotalSeguro() {
+		BigDecimal preciototal = new BigDecimal(0.0);
+		for (Producto p : productos)
+			// Coge los productos
+			preciototal = preciototal.add(p.getPrecioSeguro()); // (add) se le suma
+																// getprecioseguro
+		return preciototal;
+
 	}
 }

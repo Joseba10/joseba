@@ -19,13 +19,17 @@ public class CarritoPrueba {
 		/*
 		 * ID: 1, Monitor 21",125.03€
 		 */
+		System.out.println("Precio total:");
 		System.out.println(c.getPrecioTotal());
 		System.out.println(c.getPrecioTotal(3)); // Dejas dos
 													// decimales
-
+		System.out.println("Iva sobre precio total:");
 		System.out.println(c.getIvaSobrePrecioTotal()); // Asumimos IVA 21%
+		System.out.println("Numero de articulos:");
 		System.out.println(c.getNumerodearticulos());
+		System.out.println("Precio total con iva:");
 		System.out.println(c.getPrecioTotalconIva());
-
+		System.out.println("Precio total seguro:");
+		System.out.println(c.getPrecioTotalSeguro());
 	}
 }
