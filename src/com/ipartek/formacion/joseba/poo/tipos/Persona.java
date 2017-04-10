@@ -3,50 +3,53 @@ package com.ipartek.formacion.joseba.poo.tipos;
 import java.util.Date;
 
 public class Persona {
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + "]";
+	}
 
 	private int id;
-	private String Nombre;
-	private Date date;
+	private String nombre;
+	private Date fechaNacimiento;
 
-	public Persona(int id, String Nombre) {
-
+	public Persona(int id, String nombre) {
 		setId(id);
-		setNombre(Nombre);
-		setFechaNacimiento(date);
+		setNombre(nombre);
 	}
 
 	public Persona() {
-		this(0, "Anonimo");
+		this(0, "Anónimo");
 	}
 
-	public void setNombre(String Nombre) {
-
-		this.Nombre = Nombre;
-
-	}
-
-	public String getNombre() {
-		return (String) Nombre;
+	public int getId() {
+		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public int getId() {
-		return (int) id;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setFechaNacimiento(Date date) {
-
-		this.date = date;
-
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	@SuppressWarnings("deprecation")
 	public String aTexto() {
 
-		return ("Id " + id + ", Nombre " + Nombre + ", " + "Fecha de Nacimiento" + date);
-		// Puedes ponerlo asi: %3$te-%3$tm-%3$tY para sacar las fechas
+		// return String.format("ID: %d, NOMBRE: %s, FECHA_NACIMIENTO: %3$te-%3$tm-%3$tY",
+		// getId(), getNombre(), getFechaNacimiento());
+		return String.format("ID: %d, NOMBRE: %s, FECHA_NACIMIENTO: %d-%d-%d", getId(), getNombre(), getFechaNacimiento().getDate(), getFechaNacimiento().getMonth() + 1, getFechaNacimiento().getYear() + 1900);
 	}
 
+	private Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
 }
