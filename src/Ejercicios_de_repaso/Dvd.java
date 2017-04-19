@@ -9,15 +9,14 @@ public class Dvd {
 	String resumen;
 	String genero;
 
-	Dvd(String titulo, String director, String actoresprincipales, int duracion, String resumen, String genero) {
+	Dvd(String titulo, String director, String actoresprincipales, String genero, String resumen, int duracion) {
 
 		this.titulo = titulo;
 		this.director = director;
 		this.actoresPrincipales = actoresprincipales;
-		this.duracion = duracion;
 		this.resumen = resumen;
 		this.genero = genero;
-
+		this.duracion = duracion;
 	}
 
 	boolean esThriller() {
@@ -34,6 +33,6 @@ public class Dvd {
 
 	String muestraDVDCine() {
 
-		return titulo.toUpperCase() + "\nDE:" + director + " \nCon: " + actoresPrincipales + "\nDuracion " + muestraDuracion() + " \nGenero " + genero + " \nResumen: " + resumen;
+		return titulo.toUpperCase() + "\nDE:" + director + " \nCon: " + actoresPrincipales + " \nGenero " + genero + " \nResumen: " + resumen + "\nDuracion " + muestraDuracion();
 	}
 }
