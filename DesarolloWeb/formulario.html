@@ -1,0 +1,73 @@
+<!DOCTYPE>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="formulario.css">
+
+</head>
+
+
+
+
+<body>
+
+
+	<h1>Segunda</h1>
+
+
+	<img src="form.png"><br><br><br>
+	<a href="prueba.html">Ir a la primera</a>
+
+	<form action="#">
+
+		Genero:
+		<label for="Masculino">Masculino</label>
+		<input type="radio" name="sexo" value="Masculino" id="Masculino">
+
+		<label for="Femenino">Femenino</label>
+		<input type="radio" name="sexo" value="Femenino" id="Femenino">
+
+		<select name="Tipo">
+		<optgroup label="Gratuito">
+			<option value="0">Bronce</option></optgroup>
+	<optgroup label="De Pago">
+	<option value="1">Plata</option>
+	<option value="2">Oro</option>
+	</optgroup>
+</select>
+
+		<select name="tipo2" multiple="multiple">
+			
+					<optgroup label="Gratuito">
+			<option value="0">Bronce</option></optgroup>
+	<optgroup label="De Pago">
+	<option value="1">Plata</option>
+	<option value="2">Oro</option>
+	</optgroup>
+		</select>
+
+		<label for="suscripcion">Suscribirse</label>
+
+		<input type="checkbox" id="suscripcion" name="suscripcion">
+
+		<input type="submit" name="enviar" value="Enviar">
+	</form>
+
+
+
+	<form action="#">
+		<p>
+			<label for="consulta">Consulta</label>
+			<input type="text" name="q" id="consulta" placeholder="Escribe" />
+
+		</p>
+		<p>
+
+
+			<input type="submit" value="Mandar a Google" />
+
+		</p>
+
+
+	</form>
+</body>

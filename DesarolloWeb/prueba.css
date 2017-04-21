@@ -1,0 +1,42 @@
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+p {
+	text-align: center;
+}
+
+p span {
+	font-weight: bold;
+}
+
+img {
+	margin-left: 102px
+}
+
+#loco img {
+	margin-left: 100px;
+	width: 500px;
+}
+
+#tipos {
+	margin-left: 250px;
+}
+
+article {
+	text-align: center;
+}
+
+article img {
+	width: 200px;
+	margin-left: -110px;
+}
+
+article table {
+	float: left;
+}
+
+article span {
+	margin-left: 140px;
+}
