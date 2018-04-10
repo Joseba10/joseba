@@ -1,6 +1,6 @@
 # joseba
 
-#Ejecicios realizados en clase
+# Ejecicios realizados en clase
 
 # Resumen
 
