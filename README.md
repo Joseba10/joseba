@@ -1,13 +1,14 @@
 # joseba
-Mis ejercicios:
+
+#Ejecicios realizados en clase
 
 # Resumen
 
-## Colecciones
-## Metodos Abstracto
-## Instancias
-## Validaciones
-## Excepciones
+## -Colecciones
+## -Metodos Abstracto
+## -Instancias
+## -Validaciones
+## -Excepciones
 
 
 
