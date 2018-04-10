@@ -4,7 +4,7 @@
 /**
  * @author josebaclemente
  * 
- * Joseba Clemente Arija
+ * Joseba
  *
  */
 package com.ipartek.formacion.joseba;
